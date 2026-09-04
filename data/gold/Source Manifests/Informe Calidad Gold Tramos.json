@@ -1,0 +1,26 @@
+{
+  "layer": "gold",
+  "table": "Dataset Tramos Ruta",
+  "status": "ok",
+  "started_at_utc": "2026-09-04T21:39:58Z",
+  "created_at_utc": "2026-09-04T21:42:35Z",
+  "engine": "pyspark",
+  "grain": "one row per segment between consecutive stops",
+  "target": "travel_time_seconds",
+  "outputs": {
+    "dataset_csv": "data/gold/Dataset Tramos Ruta/Dataset Tramos Ruta.csv",
+    "dataset_parquet": "data/gold/Dataset Tramos Ruta/Dataset Tramos Ruta.parquet",
+    "data_contract": "data/gold/Dataset Tramos Ruta/Contrato Datos Gold Tramos.md"
+  },
+  "output_columns": 31,
+  "validation": {
+    "tramos": 898415,
+    "rutas": 6112,
+    "tramos_sin_objetivo": 0,
+    "tramos_sin_distancia": 0,
+    "tramos_sin_estacion": 0,
+    "tramos_sin_meteorologia": 0,
+    "tramos_del_deposito": 6112
+  },
+  "recommended_next_step": "EDA sobre el tiempo de tramo y modelado con GroupKFold por route_id."
+}

@@ -1,0 +1,75 @@
+[project]
+name = "smartdeliveryai"
+version = "0.1.0"
+description = "Prediccion de tiempos de entrega (Amazon Last Mile) + sistema multiagente de optimizacion de rutas. Proyecto de TFM."
+requires-python = "==3.12.*"
+dependencies = []
+
+[project.optional-dependencies]
+pipeline = [
+    "pyspark==4.2.0",
+    "pandas==2.3.3",
+    "pyarrow==24.0.0",
+    "matplotlib==3.11.1",
+    "seaborn==0.13.2",
+    "scipy==1.18.0",
+    "statsmodels==0.14.6",
+    "ijson==3.5.1",
+]
+modelado = [
+    "pandas==2.3.3",
+    "pyarrow==24.0.0",
+    "scikit-learn==1.9.0",
+    "lightgbm==4.7.0",
+    "catboost==1.2.10",
+    "shap==0.52.0",
+    "mlflow==3.15.1",
+    "matplotlib==3.11.1",
+]
+deep-learning = [
+    "torch==2.13.0",
+]
+agente = [
+    "langgraph==1.2.11",
+    "langchain==1.3.15",
+    "langchain-openai==1.5.1",
+    "langchain-mcp-adapters==0.3.2",
+    "mcp==1.29.0",
+    "python-dotenv==1.2.2",
+    "pandas==2.3.3",
+    "pyarrow==24.0.0",
+    "catboost==1.2.10",
+    "lightgbm==4.7.0",
+    "shap==0.52.0",
+]
+app = [
+    "streamlit==1.61.1",
+    "pydeck==0.9.3",
+]
+notebooks = [
+    "jupyter==1.1.1",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/preprocessing", "src/modelado", "src/agente", "src/app"]
+
+[project.scripts]
+sdai-pipeline = "preprocessing.pipeline.ejecutar_pipeline_completo:main"
+sdai-eda = "preprocessing.eda.eda_tiempos:main"
+sdai-train = "modelado.entrenamiento_final:main"
+sdai-mcp = "agente.servidor_mcp.mcp_server:main"
+
+# Indice explicito para torch: solo se resuelve contra el aqui, el resto de paquetes (incluido
+# certifi, que langchain-openai exige >=2024.6.2 y que el indice de PyTorch serviria en una
+# version mucho mas vieja si se dejara resolver junto a todo lo demas) sigue viniendo de PyPI.
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true
+
+[tool.uv.sources]
+torch = { index = "pytorch-cpu" }

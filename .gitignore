@@ -1,0 +1,48 @@
+# Entorno y cache de Python/uv
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+.env
+
+# Metadatos de macOS
+.DS_Store
+
+# Configuracion local de Claude Code (permisos de este equipo, no del proyecto).
+.claude/settings.local.json
+
+# Binarios nativos de Windows para PySpark (winutils.exe/hadoop.dll) y JDK portable,
+# especificos de cada maquina: se crean localmente, no se versionan (ver README.md).
+.hadoop/
+.jdk/
+
+# Datos originales pesados: se descargan/regeneran localmente, no se suben a git.
+data/raw_amazon/02 Dataset Original Amazon Last Mile/**/*.json
+data/bronze/**/Raw/*.json
+
+# Salidas del pipeline, regenerables con 'uv run sdai-pipeline'.
+data/silver/**/*.csv
+data/silver/**/*.parquet
+data/gold/**/*.csv
+data/gold/**/*.parquet
+
+# Banco de produccion simulada = test set del modelo, regenerable con 'uv run sdai-train'.
+data/produccion_simulada/*.parquet
+
+# CatBoost deja este directorio de trabajo transitorio en cada entrenamiento
+# (artifacts/modelado/catboost_info/, o el cwd si algun script no fija train_dir).
+catboost_info/
+
+# Artefactos pesados y regenerables del bake-off de arquitecturas (src/modelado/bakeoff/,
+# src/modelado/analisis_errores.py): reports/figuras/mlflow se reconstruyen ejecutando los
+# scripts, no hace falta versionarlos. En particular, el CSV de predicciones fuera de
+# muestra de analisis_errores.py pesa ~94 MB.
+artifacts/modelado/reports/analisis_errores_predicciones_oof.csv
+artifacts/modelado/mlflow/
+
+# Modelo final: reparto_catboost.cbm pesa varios cientos de MB, muy por encima del limite
+# de GitHub (100 MB). El resto de artifacts/modelo/ (model_card, informe SHAP, graficos,
+# manifiesto, csv de importancia) SI se versiona: es documentacion pequena y legible que
+# no deberia depender de reentrenar 75 min para poder consultarse.
+artifacts/modelo/reparto_catboost.cbm

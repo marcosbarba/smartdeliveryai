@@ -1,0 +1,113 @@
+{
+  "description": "Station coordinates derived from Amazon route_data Station stops. Used only to request external data.",
+  "source_file": "data/raw_amazon/02 Dataset Original Amazon Last Mile/Dataset Entrenamiento 2021/Model Build Inputs/route_data.json",
+  "generated_at_utc": "2026-09-04T21:25:52.136261+00:00",
+  "date_min": "2018-07-19",
+  "date_max": "2018-08-26",
+  "route_count": 6112,
+  "station_count": 17,
+  "stations": [
+    {
+      "station_code": "DAU1",
+      "route_count": 214,
+      "latitude": 30.445236,
+      "longitude": -97.709418
+    },
+    {
+      "station_code": "DBO1",
+      "route_count": 60,
+      "latitude": 42.394375,
+      "longitude": -71.055555
+    },
+    {
+      "station_code": "DBO2",
+      "route_count": 296,
+      "latitude": 42.233353,
+      "longitude": -71.141617
+    },
+    {
+      "station_code": "DBO3",
+      "route_count": 573,
+      "latitude": 42.139891,
+      "longitude": -71.494346
+    },
+    {
+      "station_code": "DCH1",
+      "route_count": 196,
+      "latitude": 41.840375,
+      "longitude": -87.683736
+    },
+    {
+      "station_code": "DCH2",
+      "route_count": 154,
+      "latitude": 42.031368,
+      "longitude": -87.776596
+    },
+    {
+      "station_code": "DCH3",
+      "route_count": 271,
+      "latitude": 41.803295,
+      "longitude": -88.097259
+    },
+    {
+      "station_code": "DCH4",
+      "route_count": 381,
+      "latitude": 42.254346,
+      "longitude": -87.985697
+    },
+    {
+      "station_code": "DLA3",
+      "route_count": 254,
+      "latitude": 34.007369,
+      "longitude": -118.143927
+    },
+    {
+      "station_code": "DLA4",
+      "route_count": 197,
+      "latitude": 34.23485,
+      "longitude": -118.58421
+    },
+    {
+      "station_code": "DLA5",
+      "route_count": 155,
+      "latitude": 33.937865,
+      "longitude": -117.29738
+    },
+    {
+      "station_code": "DLA7",
+      "route_count": 1133,
+      "latitude": 33.965477,
+      "longitude": -117.653303
+    },
+    {
+      "station_code": "DLA8",
+      "route_count": 448,
+      "latitude": 33.918699,
+      "longitude": -118.324843
+    },
+    {
+      "station_code": "DLA9",
+      "route_count": 701,
+      "latitude": 33.688122,
+      "longitude": -117.847178
+    },
+    {
+      "station_code": "DSE2",
+      "route_count": 125,
+      "latitude": 47.54217,
+      "longitude": -122.328049
+    },
+    {
+      "station_code": "DSE4",
+      "route_count": 446,
+      "latitude": 47.937344,
+      "longitude": -122.244952
+    },
+    {
+      "station_code": "DSE5",
+      "route_count": 508,
+      "latitude": 47.464945,
+      "longitude": -122.231073
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "layer": "silver",
+  "created_at_utc": "2026-09-04T21:37:28Z",
+  "started_at_utc": "2026-09-04T21:33:32Z",
+  "status": "ok",
+  "engine": "pyspark",
+  "spark_master": "local[*]",
+  "format": "csv_and_parquet",
+  "note": "Silver se construye con PySpark. Se mantiene CSV para revision local y Parquet para simular almacenamiento Big Data.",
+  "tables": {
+    "routes": 6112,
+    "stops": 904527,
+    "packages": 1457175,
+    "actual_sequence_rows": 904527,
+    "invalid_sequence_scores": 6112,
+    "stations": 17,
+    "weather_daily_rows": 663,
+    "weather_files": 17,
+    "holiday_records": 16,
+    "calendar_daily_rows": 39
+  },
+  "travel_times": {
+    "status": "ok",
+    "travel_time_routes": 6112,
+    "travel_time_segments": 898415,
+    "expected_segments": 898415,
+    "missing_segments": 0,
+    "routes_without_sequence": 0
+  },
+  "join_validation": {
+    "routes_without_weather_match": 0,
+    "routes_without_calendar_match": 0
+  },
+  "expected_joins_for_gold": {
+    "routes_to_weather": "routes.station_code + routes.route_date = weather_daily.station_code + weather_daily.weather_date",
+    "routes_to_calendar": "routes.route_date = calendar_daily.calendar_date",
+    "routes_to_sequences": "routes.route_id + stops.stop_id = actual_sequences.route_id + actual_sequences.stop_id",
+    "routes_to_packages": "routes.route_id + stops.stop_id = packages.route_id + packages.stop_id"
+  }
+}

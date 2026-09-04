@@ -1,0 +1,606 @@
+{
+  "generado": "2026-09-04",
+  "vision_general": {
+    "tramos": 898415,
+    "columnas_tramos": 31,
+    "rutas": 6112,
+    "columnas_rutas": 60,
+    "memoria_mb": 505.4,
+    "tipos_de_dato": {
+      "float64": 14,
+      "object": 7,
+      "int32": 7,
+      "int64": 3
+    },
+    "periodo": [
+      "2018-07-19",
+      "2018-08-26"
+    ],
+    "estaciones": 17
+  },
+  "calidad": {
+    "celdas_nulas": 37744,
+    "columnas_con_nulos": {
+      "same_zone": 18700,
+      "from_zone_id": 12529,
+      "to_zone_id": 6515
+    },
+    "porcentaje_nulos_total": 0.1355,
+    "filas_duplicadas_completas": 0,
+    "duplicados_por_clave": 0,
+    "columnas_constantes": [],
+    "columnas_casi_constantes": {
+      "is_depot_segment": 99.32
+    },
+    "columnas_con_negativos": {},
+    "columnas_con_muchos_ceros": {
+      "is_depot_segment": 99.32,
+      "same_zone": 13.34,
+      "packages_with_window_at_destination": 93.41,
+      "weekday": 11.78,
+      "is_weekend": 76.32,
+      "rain_sum_mm": 65.86,
+      "has_rain": 65.86
+    },
+    "figura": "artifacts/eda/figuras/01 Calidad de los datos.png"
+  },
+  "objetivo": {
+    "reparto": {
+      "tramos": 892303,
+      "media_min": 1.024,
+      "mediana_min": 0.757,
+      "desviacion_min": 1.019,
+      "p05_min": 0.122,
+      "p95_min": 2.827,
+      "p99_min": 4.892,
+      "max_min": 39.12,
+      "asimetria": 3.597,
+      "curtosis": 30.129
+    },
+    "deposito": {
+      "tramos": 6112,
+      "media_min": 30.191,
+      "mediana_min": 29.908,
+      "desviacion_min": 10.364,
+      "p05_min": 14.081,
+      "p95_min": 48.538,
+      "p99_min": 56.549,
+      "max_min": 95.85,
+      "asimetria": 0.327,
+      "curtosis": 0.073
+    },
+    "veces_mas_largo": 29.5,
+    "normalidad_shapiro_p": 2.51e-67,
+    "normalidad_log_shapiro_p": 2.22e-21,
+    "asimetria_tras_log": -0.461,
+    "figura": "artifacts/eda/figuras/02 Variable objetivo.png"
+  },
+  "univariante_numericas": {
+    "resumen": {
+      "segment_position": {
+        "mean": 77.271,
+        "std": 47.26,
+        "min": 1.0,
+        "50%": 74.0,
+        "max": 237.0
+      },
+      "travel_time_seconds": {
+        "mean": 73.366,
+        "std": 164.434,
+        "min": 0.0,
+        "50%": 45.8,
+        "max": 5751.2
+      },
+      "segment_distance_km": {
+        "mean": 0.315,
+        "std": 1.633,
+        "min": 0.0,
+        "50%": 0.135,
+        "max": 48.301
+      },
+      "is_depot_segment": {
+        "mean": 0.007,
+        "std": 0.082,
+        "min": 0.0,
+        "50%": 0.0,
+        "max": 1.0
+      },
+      "same_zone": {
+        "mean": 0.864,
+        "std": 0.343,
+        "min": 0.0,
+        "50%": 1.0,
+        "max": 1.0
+      },
+      "packages_at_destination": {
+        "mean": 1.622,
+        "std": 1.342,
+        "min": 1.0,
+        "50%": 1.0,
+        "max": 113.0
+      },
+      "service_time_at_destination_seconds": {
+        "mean": 110.682,
+        "std": 128.915,
+        "min": 4.0,
+        "50%": 73.0,
+        "max": 8007.0
+      },
+      "volume_at_destination_cm3": {
+        "mean": 17968.073,
+        "std": 27181.535,
+        "min": 0.0,
+        "50%": 9515.73,
+        "max": 1526852.676
+      },
+      "packages_with_window_at_destination": {
+        "mean": 0.127,
+        "std": 0.782,
+        "min": 0.0,
+        "50%": 0.0,
+        "max": 72.0
+      },
+      "segment_ratio": {
+        "mean": 0.503,
+        "std": 0.289,
+        "min": 0.004,
+        "50%": 0.503,
+        "max": 1.0
+      },
+      "cumulative_distance_km": {
+        "mean": 32.404,
+        "std": 14.321,
+        "min": 0.0,
+        "50%": 31.222,
+        "max": 109.174
+      },
+      "departure_hour": {
+        "mean": 14.254,
+        "std": 1.34,
+        "min": 10.0,
+        "50%": 14.0,
+        "max": 18.0
+      },
+      "route_total_stops": {
+        "mean": 154.543,
+        "std": 28.409,
+        "min": 33.0,
+        "50%": 157.0,
+        "max": 238.0
+      },
+      "route_package_count": {
+        "mean": 242.058,
+        "std": 30.105,
+        "min": 150.0,
+        "50%": 243.0,
+        "max": 304.0
+      },
+      "weekday": {
+        "mean": 2.917,
+        "std": 1.886,
+        "min": 0.0,
+        "50%": 3.0,
+        "max": 6.0
+      },
+      "is_weekend": {
+        "mean": 0.237,
+        "std": 0.425,
+        "min": 0.0,
+        "50%": 0.0,
+        "max": 1.0
+      },
+      "temperature_2m_mean_c": {
+        "mean": 24.045,
+        "std": 3.188,
+        "min": 14.1,
+        "50%": 24.0,
+        "max": 33.9
+      },
+      "rain_sum_mm": {
+        "mean": 1.687,
+        "std": 4.738,
+        "min": 0.0,
+        "50%": 0.0,
+        "max": 41.2
+      },
+      "has_rain": {
+        "mean": 0.341,
+        "std": 0.474,
+        "min": 0.0,
+        "50%": 0.0,
+        "max": 1.0
+      },
+      "wind_speed_10m_max_kmh": {
+        "mean": 17.109,
+        "std": 4.735,
+        "min": 7.4,
+        "50%": 16.5,
+        "max": 38.9
+      }
+    },
+    "asimetria": {
+      "segment_position": 0.263,
+      "travel_time_seconds": 11.393,
+      "segment_distance_km": 15.152,
+      "is_depot_segment": 12.0,
+      "same_zone": -2.121,
+      "packages_at_destination": 7.802,
+      "service_time_at_destination_seconds": 7.868,
+      "volume_at_destination_cm3": 6.046,
+      "packages_with_window_at_destination": 16.918,
+      "segment_ratio": -0.0,
+      "cumulative_distance_km": 0.489,
+      "departure_hour": -0.498,
+      "route_total_stops": -0.568,
+      "route_package_count": -0.287,
+      "weekday": 0.066,
+      "is_weekend": 1.238,
+      "temperature_2m_mean_c": -0.267,
+      "rain_sum_mm": 4.685,
+      "has_rain": 0.669,
+      "wind_speed_10m_max_kmh": 0.562
+    },
+    "muy_asimetricas": [
+      "travel_time_seconds",
+      "segment_distance_km",
+      "is_depot_segment",
+      "same_zone",
+      "packages_at_destination",
+      "service_time_at_destination_seconds",
+      "volume_at_destination_cm3",
+      "packages_with_window_at_destination",
+      "rain_sum_mm"
+    ],
+    "figura": "artifacts/eda/figuras/03 Distribuciones numericas.png"
+  },
+  "univariante_categoricas": {
+    "cardinalidad": {
+      "station_code": 17,
+      "from_zone_id": 8960,
+      "to_zone_id": 8962,
+      "route_date": 39
+    },
+    "estacion_mas_frecuente": {
+      "DLA7": 173738
+    },
+    "concentracion_top3_estaciones_pct": 40.32,
+    "zonas_distintas": 8962,
+    "zonas_con_un_solo_tramo": 96,
+    "figura": "artifacts/eda/figuras/04 Categoricas.png"
+  },
+  "atipicos": {
+    "por_variable": {
+      "travel_time_seconds": {
+        "atipicos_iqr": 48830,
+        "porcentaje": 5.47,
+        "limite_superior": 163.8,
+        "maximo": 2347.3
+      },
+      "segment_distance_km": {
+        "atipicos_iqr": 64224,
+        "porcentaje": 7.2,
+        "limite_superior": 0.441,
+        "maximo": 13.821
+      },
+      "packages_at_destination": {
+        "atipicos_iqr": 52154,
+        "porcentaje": 5.84,
+        "limite_superior": 3.5,
+        "maximo": 78.0
+      },
+      "service_time_at_destination_seconds": {
+        "atipicos_iqr": 72617,
+        "porcentaje": 8.14,
+        "limite_superior": 239.0,
+        "maximo": 8007.0
+      }
+    },
+    "tramos_de_cero_segundos": 1711,
+    "porcentaje_ceros": 0.192,
+    "figura": "artifacts/eda/figuras/05 Valores atipicos.png"
+  },
+  "correlaciones": {
+    "pares_muy_correlacionados": [
+      {
+        "a": "segment_position",
+        "b": "segment_ratio",
+        "correlacion": 0.937
+      },
+      {
+        "a": "travel_time_seconds",
+        "b": "segment_distance_km",
+        "correlacion": 0.935
+      },
+      {
+        "a": "segment_distance_km",
+        "b": "is_depot_segment",
+        "correlacion": 0.8831
+      },
+      {
+        "a": "travel_time_seconds",
+        "b": "is_depot_segment",
+        "correlacion": 0.8748
+      },
+      {
+        "a": "weekday",
+        "b": "is_weekend",
+        "correlacion": 0.7563
+      }
+    ],
+    "correlacion_pearson_con_objetivo": {
+      "segment_distance_km": 0.935,
+      "is_depot_segment": 0.8748,
+      "same_zone": -0.3603,
+      "cumulative_distance_km": -0.1476,
+      "segment_ratio": -0.1253,
+      "segment_position": -0.1174,
+      "service_time_at_destination_seconds": 0.0896,
+      "packages_with_window_at_destination": 0.0519,
+      "route_package_count": -0.044,
+      "packages_at_destination": 0.0278,
+      "departure_hour": -0.0248,
+      "volume_at_destination_cm3": 0.0203,
+      "route_total_stops": -0.0166,
+      "has_rain": 0.0124
+    },
+    "correlacion_spearman_con_objetivo": {
+      "segment_distance_km": 0.7862,
+      "is_depot_segment": 0.1423,
+      "same_zone": NaN,
+      "cumulative_distance_km": 0.026,
+      "segment_ratio": -0.0184,
+      "segment_position": -0.0127,
+      "service_time_at_destination_seconds": 0.1003,
+      "packages_with_window_at_destination": 0.0838,
+      "route_package_count": -0.0755,
+      "packages_at_destination": -0.0023,
+      "departure_hour": -0.0566,
+      "volume_at_destination_cm3": 0.0042
+    },
+    "figuras": [
+      "artifacts/eda/figuras/06 Matriz de correlaciones.png",
+      "artifacts/eda/figuras/07 Correlacion con el objetivo.png"
+    ]
+  },
+  "multicolinealidad": {
+    "vif": {
+      "segment_position": 35.37,
+      "segment_ratio": 31.06,
+      "route_total_stops": 4.13,
+      "packages_at_destination": 2.32,
+      "cumulative_distance_km": 2.04,
+      "service_time_at_destination_seconds": 1.54,
+      "volume_at_destination_cm3": 1.54,
+      "packages_with_window_at_destination": 1.35,
+      "departure_hour": 1.14,
+      "segment_distance_km": 1.03
+    },
+    "umbral_habitual": 5,
+    "variables_por_encima_del_umbral": [
+      "segment_position",
+      "segment_ratio"
+    ]
+  },
+  "distancia": {
+    "figura": "artifacts/eda/figuras/08 Distancia frente a tiempo.png",
+    "poblaciones": {
+      "todos": {
+        "correlacion": 0.935,
+        "r2_solo_distancia": 0.8743,
+        "mae_min": 0.565,
+        "velocidad_implicita_kmh": 15.4
+      },
+      "reparto": {
+        "correlacion": 0.7644,
+        "r2_solo_distancia": 0.5843,
+        "mae_min": 0.424,
+        "velocidad_implicita_kmh": 11.4
+      },
+      "deposito": {
+        "correlacion": 0.8701,
+        "r2_solo_distancia": 0.7571,
+        "mae_min": 3.912,
+        "velocidad_implicita_kmh": 35.3
+      }
+    }
+  },
+  "baseline": {
+    "r2_distancia_entre_velocidad_media": -1.0344,
+    "r2_recta_unica": 0.8743,
+    "r2_recta_por_poblacion": 0.9193,
+    "mae_recta_por_poblacion_min": 0.447,
+    "figura": "artifacts/eda/figuras/09 Baselines.png"
+  },
+  "residuo": {
+    "correlaciones_con_residuo": {
+      "same_zone": -0.1877,
+      "service_time_at_destination_seconds": 0.084,
+      "packages_with_window_at_destination": 0.0645,
+      "route_total_stops": -0.0637,
+      "cumulative_distance_km": -0.0472,
+      "packages_at_destination": 0.0425,
+      "route_package_count": -0.0324,
+      "has_rain": -0.0294,
+      "segment_position": -0.0249,
+      "volume_at_destination_cm3": 0.021
+    },
+    "variable_mas_explicativa": "same_zone",
+    "misma_zona": {
+      "0.0": {
+        "tramos": 119811,
+        "minutos": 1.946,
+        "km": 0.384
+      },
+      "1.0": {
+        "tramos": 759904,
+        "minutos": 0.878,
+        "km": 0.165
+      }
+    },
+    "porcentaje_tramos_misma_zona": 86.38,
+    "figuras": [
+      "artifacts/eda/figuras/10 Residuo tras la distancia.png",
+      "artifacts/eda/figuras/11 Efecto de la zona.png"
+    ]
+  },
+  "contexto": {
+    "minutos_por_ciudad": {
+      "LA": 0.972,
+      "SE": 1.01,
+      "CH": 1.054,
+      "AU": 1.114,
+      "BO": 1.141
+    },
+    "minutos_por_hora": {
+      "10": 1.057,
+      "11": 1.08,
+      "12": 1.186,
+      "13": 1.065,
+      "14": 1.022,
+      "15": 0.994,
+      "16": 0.965,
+      "17": 0.849,
+      "18": 0.764
+    },
+    "lluvia_correlacion_global": 0.0369,
+    "lluvia_correlacion_media_dentro_de_estacion": 0.0017,
+    "estaciones_analizadas": 14,
+    "figuras": [
+      "artifacts/eda/figuras/12 Contexto geografico y temporal.png",
+      "artifacts/eda/figuras/13 Paradoja de Simpson del clima.png"
+    ]
+  },
+  "contrastes": {
+    "deposito_vs_reparto": {
+      "prueba": "Mann-Whitney U",
+      "p": 0.0,
+      "significativo": true
+    },
+    "lluvia": {
+      "prueba": "Mann-Whitney U",
+      "p": 3.57e-289,
+      "d_de_cohen": 0.0771,
+      "interpretacion": "efecto despreciable"
+    },
+    "misma_zona": {
+      "prueba": "Mann-Whitney U",
+      "p": 0.0,
+      "d_de_cohen": -0.8403,
+      "interpretacion": "efecto apreciable"
+    },
+    "estaciones": {
+      "prueba": "Kruskal-Wallis",
+      "p": 0.0,
+      "grupos": 17,
+      "significativo": true
+    }
+  },
+  "por_ruta": {
+    "duracion_media_h": 7.51,
+    "duracion_min_h": 4.27,
+    "duracion_max_h": 10.6,
+    "porcentaje_conducir": 39.9,
+    "porcentaje_entregar": 60.1,
+    "figura": "artifacts/eda/figuras/14 Duracion de ruta.png"
+  },
+  "rutas_calidad": {
+    "rutas": 6112,
+    "columnas": 60,
+    "celdas_nulas": 0,
+    "duplicados": 0,
+    "columnas_constantes": [
+      "station_stops",
+      "other_scan_status_count",
+      "snowfall_sum_cm",
+      "year",
+      "is_us_public_holiday"
+    ],
+    "columnas_equivalentes": [
+      "total_stops == dropoff_stops",
+      "total_stops == stop_rows",
+      "total_stops == sequence_stop_count",
+      "total_stops == max_actual_sequence_position",
+      "dropoff_stops == stop_rows",
+      "dropoff_stops == sequence_stop_count",
+      "dropoff_stops == max_actual_sequence_position",
+      "stop_rows == sequence_stop_count",
+      "stop_rows == max_actual_sequence_position",
+      "mean_planned_service_time_seconds == planned_service_time_per_package_seconds"
+    ]
+  },
+  "rutas_composicion": {
+    "resumen": {
+      "total_stops": {
+        "mean": 147.99,
+        "std": 31.03,
+        "min": 33.0,
+        "50%": 151.0,
+        "max": 238.0
+      },
+      "package_count": {
+        "mean": 238.41,
+        "std": 30.98,
+        "min": 150.0,
+        "50%": 239.0,
+        "max": 304.0
+      },
+      "unique_zones": {
+        "mean": 20.04,
+        "std": 5.51,
+        "min": 4.0,
+        "50%": 20.0,
+        "max": 47.0
+      },
+      "total_package_volume_cm3": {
+        "mean": 2641162.73,
+        "std": 470587.32,
+        "min": 1242909.09,
+        "50%": 2635624.31,
+        "max": 4427701.53
+      },
+      "packages_per_dropoff_stop": {
+        "mean": 1.69,
+        "std": 0.43,
+        "min": 1.16,
+        "50%": 1.56,
+        "max": 7.34
+      },
+      "route_duration_hours": {
+        "mean": 7.51,
+        "std": 0.78,
+        "min": 4.27,
+        "50%": 7.55,
+        "max": 10.6
+      }
+    },
+    "figura": "artifacts/eda/figuras/15 Composicion de las rutas.png"
+  },
+  "rutas_relaciones": {
+    "correlacion_con_duracion": {
+      "total_planned_service_time_seconds": 0.6079,
+      "mean_planned_service_time_seconds": 0.3948,
+      "planned_service_time_per_package_seconds": 0.3948,
+      "total_stops": 0.294,
+      "dropoff_stops": 0.294,
+      "sequence_stop_count": 0.294,
+      "stop_rows": 0.294,
+      "max_actual_sequence_position": 0.294,
+      "delivery_haversine_distance_km": 0.2846,
+      "invalid_sequence_score": 0.267,
+      "packages_per_dropoff_stop": -0.2156,
+      "mean_delivery_segment_distance_km": 0.183
+    },
+    "reparto_route_score": {
+      "Medium": 3292,
+      "High": 2718,
+      "Low": 102
+    },
+    "porcentaje_clase_minoritaria": 1.67,
+    "duracion_media_por_score": {
+      "High": 7.41,
+      "Low": 7.81,
+      "Medium": 7.6
+    },
+    "figura": "artifacts/eda/figuras/16 Duracion de la ruta.png"
+  }
+}

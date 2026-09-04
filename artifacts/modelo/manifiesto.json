@@ -1,0 +1,89 @@
+{
+  "descripcion": "Modelo hibrido: CatBoost en tramos de reparto, LightGBM en el tramo de almacen. Entrenado sobre el 80% de las rutas (train); el 20% restante (test) nunca participo en el ajuste y es tambien el banco de produccion simulada del agente.",
+  "generado_utc": "2026-09-04T17:39:45+00:00",
+  "objetivo": "travel_time_seconds",
+  "unidad_prediccion": "segundos (dividir por 60 para minutos)",
+  "poblacion": "'is_depot_segment' = 1 selecciona el especialista de almacen, 0 el de reparto",
+  "reparto": {
+    "fichero": "reparto_catboost.cbm",
+    "formato": "CatBoost nativo (.cbm)",
+    "variables": [
+      "segment_distance_km",
+      "same_zone",
+      "segment_position",
+      "cumulative_distance_km",
+      "packages_at_destination",
+      "service_time_at_destination_seconds",
+      "volume_at_destination_cm3",
+      "packages_with_window_at_destination",
+      "departure_hour",
+      "route_total_stops",
+      "route_package_count",
+      "weekday",
+      "station_code",
+      "to_zone_id"
+    ],
+    "categoricas": [
+      "station_code",
+      "to_zone_id"
+    ],
+    "categoria_desconocida": "to_zone_id ausente -> imputar 'SIN_ZONA'",
+    "test_mae_min": 0.3518283729956485,
+    "test_r2": 0.6487383117634684
+  },
+  "almacen": {
+    "fichero": "almacen_lightgbm.txt",
+    "formato": "LightGBM nativo (.txt)",
+    "variables": [
+      "segment_distance_km",
+      "packages_at_destination",
+      "service_time_at_destination_seconds",
+      "volume_at_destination_cm3",
+      "packages_with_window_at_destination",
+      "departure_hour",
+      "route_total_stops",
+      "route_package_count",
+      "weekday",
+      "station_code"
+    ],
+    "categoricas": [
+      "station_code"
+    ],
+    "dtype_categoricas": {
+      "station_code": "category"
+    },
+    "categorias_station_code": [
+      "DAU1",
+      "DBO1",
+      "DBO2",
+      "DBO3",
+      "DCH1",
+      "DCH2",
+      "DCH3",
+      "DCH4",
+      "DLA3",
+      "DLA4",
+      "DLA5",
+      "DLA7",
+      "DLA8",
+      "DLA9",
+      "DSE2",
+      "DSE4",
+      "DSE5"
+    ],
+    "test_mae_min": 2.7867639104644466,
+    "test_r2": 0.8727790541316869
+  },
+  "test_global": {
+    "mae_min": 0.3682587458167712,
+    "rmse_min": 0.6715972069569417,
+    "r2": 0.93979068147585
+  },
+  "avisos": [
+    "No calcular velocidades a partir de los tiempos: fuga de datos.",
+    "same_zone se imputa a 0 cuando falta (siempre en almacen, y en un porcentaje pequeno de reparto).",
+    "to_zone_id ausente se imputa como 'SIN_ZONA', tratada como categoria propia.",
+    "Las predicciones se recortan a un minimo de 0 segundos.",
+    "El 20% de rutas de test es el mismo dato que data/produccion_simulada/datos_produccion.parquet: no reentrenar nunca con el."
+  ]
+}

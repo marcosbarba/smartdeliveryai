@@ -1,0 +1,105 @@
+{
+  "generated_at_utc": "2026-09-04T21:26:00.659703+00:00",
+  "purpose": "Raw Bronze external sources for future enrichment of Amazon Last Mile routes.",
+  "rules": [
+    "Bronze stores original source responses.",
+    "Do not join or transform external sources in Bronze.",
+    "Clean each source separately in Silver.",
+    "Join Amazon, weather and calendar features in Gold."
+  ],
+  "amazon_training_routes": {
+    "source_file": "data/raw_amazon/02 Dataset Original Amazon Last Mile/Dataset Entrenamiento 2021/Model Build Inputs/route_data.json",
+    "route_count": 6112,
+    "date_min": "2018-07-19",
+    "date_max": "2018-08-26",
+    "station_count": 17
+  },
+  "external_sources": {
+    "Calendar Nager": {
+      "path": "data/bronze/Calendar Nager/Raw/Festivos EEUU 2018.json",
+      "records": 16
+    },
+    "Weather Open Meteo": [
+      {
+        "station_code": "DAU1",
+        "path": "data/bronze/Weather Open Meteo/Raw/Meteorologia DAU1.json"
+      },
+      {
+        "station_code": "DBO1",
+        "path": "data/bronze/Weather Open Meteo/Raw/Meteorologia DBO1.json"
+      },
+      {
+        "station_code": "DBO2",
+        "path": "data/bronze/Weather Open Meteo/Raw/Meteorologia DBO2.json"
+      },
+      {
+        "station_code": "DBO3",
+        "path": "data/bronze/Weather Open Meteo/Raw/Meteorologia DBO3.json"
+      },
+      {
+        "station_code": "DCH1",
+        "path": "data/bronze/Weather Open Meteo/Raw/Meteorologia DCH1.json"
+      },
+      {
+        "station_code": "DCH2",
+        "path": "data/bronze/Weather Open Meteo/Raw/Meteorologia DCH2.json"
+      },
+      {
+        "station_code": "DCH3",
+        "path": "data/bronze/Weather Open Meteo/Raw/Meteorologia DCH3.json"
+      },
+      {
+        "station_code": "DCH4",
+        "path": "data/bronze/Weather Open Meteo/Raw/Meteorologia DCH4.json"
+      },
+      {
+        "station_code": "DLA3",
+        "path": "data/bronze/Weather Open Meteo/Raw/Meteorologia DLA3.json"
+      },
+      {
+        "station_code": "DLA4",
+        "path": "data/bronze/Weather Open Meteo/Raw/Meteorologia DLA4.json"
+      },
+      {
+        "station_code": "DLA5",
+        "path": "data/bronze/Weather Open Meteo/Raw/Meteorologia DLA5.json"
+      },
+      {
+        "station_code": "DLA7",
+        "path": "data/bronze/Weather Open Meteo/Raw/Meteorologia DLA7.json"
+      },
+      {
+        "station_code": "DLA8",
+        "path": "data/bronze/Weather Open Meteo/Raw/Meteorologia DLA8.json"
+      },
+      {
+        "station_code": "DLA9",
+        "path": "data/bronze/Weather Open Meteo/Raw/Meteorologia DLA9.json"
+      },
+      {
+        "station_code": "DSE2",
+        "path": "data/bronze/Weather Open Meteo/Raw/Meteorologia DSE2.json"
+      },
+      {
+        "station_code": "DSE4",
+        "path": "data/bronze/Weather Open Meteo/Raw/Meteorologia DSE4.json"
+      },
+      {
+        "station_code": "DSE5",
+        "path": "data/bronze/Weather Open Meteo/Raw/Meteorologia DSE5.json"
+      }
+    ]
+  },
+  "reliable_sources": [
+    {
+      "name": "Open-Meteo Historical Weather API",
+      "url": "https://open-meteo.com/en/docs/historical-weather-api",
+      "reason": "Provides historical weather data using reanalysis/weather model datasets without API key."
+    },
+    {
+      "name": "Nager.Date Public Holiday API",
+      "url": "https://date.nager.at/api",
+      "reason": "Open holiday API with country and subdivision holiday information."
+    }
+  ]
+}

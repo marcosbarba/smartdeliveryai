@@ -1,0 +1,38 @@
+{
+  "layer": "gold",
+  "status": "ok",
+  "started_at_utc": "2026-09-04T21:37:29Z",
+  "created_at_utc": "2026-09-04T21:39:57Z",
+  "engine": "pyspark",
+  "spark_master": "local[*]",
+  "format": "csv_and_parquet",
+  "grain": "one row per route",
+  "outputs": {
+    "dataset_csv": "data/gold/Dataset Rutas Enriquecidas/Dataset Rutas Enriquecidas.csv",
+    "dataset_parquet": "data/gold/Dataset Rutas Enriquecidas/Dataset Rutas Enriquecidas.parquet",
+    "data_contract": "data/gold/Dataset Rutas Enriquecidas/Contrato Datos Gold.md"
+  },
+  "input_tables": {
+    "routes": 6112,
+    "stops": 904527,
+    "packages": 1457175,
+    "sequences": 904527,
+    "invalid_scores": 6112,
+    "weather_daily": 663,
+    "calendar_daily": 39
+  },
+  "output_rows": 6112,
+  "output_columns": 60,
+  "validation": {
+    "routes_without_weather": 0,
+    "routes_without_calendar": 0,
+    "routes_without_packages": 0,
+    "routes_without_stops": 0,
+    "routes_without_haversine_distance": 0,
+    "routes_without_depot_distance": 0,
+    "routes_without_duration": 0,
+    "routes_with_unknown_scan_status": 0,
+    "routes_with_inconsistent_distance_split": 0
+  },
+  "recommended_next_step": "Use Dataset Rutas Enriquecidas.csv for EDA local or Dataset Rutas Enriquecidas.parquet for Spark workflows."
+}

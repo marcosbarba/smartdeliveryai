@@ -1,0 +1,150 @@
+{
+  "generado_utc": "2026-09-04T17:40:42+00:00",
+  "n_arboles_reparto": 1865,
+  "n_arboles_almacen": 532,
+  "test": {
+    "reparto": {
+      "mae_min": 0.3518283729956485,
+      "rmse_min": 0.600523359002019,
+      "r2": 0.6487383117634684
+    },
+    "almacen": {
+      "mae_min": 2.7867639104644466,
+      "rmse_min": 3.709421274056,
+      "r2": 0.8727790541316869
+    },
+    "global": {
+      "mae_min": 0.3682587458167712,
+      "rmse_min": 0.6715972069569417,
+      "r2": 0.93979068147585
+    },
+    "n_test_reparto": 179875,
+    "n_test_almacen": 1222
+  },
+  "importancia_reparto": [
+    {
+      "variable": "segment_distance_km",
+      "shap_medio_min": 0.3966170264696051,
+      "importancia_pct": 55.81479480627451
+    },
+    {
+      "variable": "station_code",
+      "shap_medio_min": 0.0870565037196038,
+      "importancia_pct": 12.251216078424546
+    },
+    {
+      "variable": "same_zone",
+      "shap_medio_min": 0.07899591910175584,
+      "importancia_pct": 11.116872753659909
+    },
+    {
+      "variable": "to_zone_id",
+      "shap_medio_min": 0.037787865806803995,
+      "importancia_pct": 5.3177797104367
+    },
+    {
+      "variable": "route_total_stops",
+      "shap_medio_min": 0.02279135684545395,
+      "importancia_pct": 3.2073633273106075
+    },
+    {
+      "variable": "service_time_at_destination_seconds",
+      "shap_medio_min": 0.020315368813376547,
+      "importancia_pct": 2.8589245192661874
+    },
+    {
+      "variable": "cumulative_distance_km",
+      "shap_medio_min": 0.01607615933350522,
+      "importancia_pct": 2.262352533020497
+    },
+    {
+      "variable": "segment_position",
+      "shap_medio_min": 0.01352148231991282,
+      "importancia_pct": 1.9028400466827646
+    },
+    {
+      "variable": "packages_with_window_at_destination",
+      "shap_medio_min": 0.0097656137110336,
+      "importancia_pct": 1.3742872571317928
+    },
+    {
+      "variable": "departure_hour",
+      "shap_medio_min": 0.008416591080602104,
+      "importancia_pct": 1.1844431095499823
+    },
+    {
+      "variable": "route_package_count",
+      "shap_medio_min": 0.0066433155230966184,
+      "importancia_pct": 0.9348950448636173
+    },
+    {
+      "variable": "weekday",
+      "shap_medio_min": 0.0058040784000513174,
+      "importancia_pct": 0.8167915730244644
+    },
+    {
+      "variable": "packages_at_destination",
+      "shap_medio_min": 0.0034413356559792998,
+      "importancia_pct": 0.48428945476126867
+    },
+    {
+      "variable": "volume_at_destination_cm3",
+      "shap_medio_min": 0.0033621777467429934,
+      "importancia_pct": 0.4731497855931405
+    }
+  ],
+  "importancia_almacen": [
+    {
+      "variable": "segment_distance_km",
+      "shap_medio_min": 7.161201577610085,
+      "importancia_pct": 71.14549343861408
+    },
+    {
+      "variable": "station_code",
+      "shap_medio_min": 1.606258559295487,
+      "importancia_pct": 15.957944564550704
+    },
+    {
+      "variable": "departure_hour",
+      "shap_medio_min": 0.3031133468737114,
+      "importancia_pct": 3.011386901687656
+    },
+    {
+      "variable": "route_total_stops",
+      "shap_medio_min": 0.26064454317133595,
+      "importancia_pct": 2.589465529637479
+    },
+    {
+      "variable": "route_package_count",
+      "shap_medio_min": 0.18601811994865042,
+      "importancia_pct": 1.848062896825584
+    },
+    {
+      "variable": "packages_with_window_at_destination",
+      "shap_medio_min": 0.16124696135154623,
+      "importancia_pct": 1.6019650482540182
+    },
+    {
+      "variable": "volume_at_destination_cm3",
+      "shap_medio_min": 0.15104879237388183,
+      "importancia_pct": 1.5006477265415856
+    },
+    {
+      "variable": "service_time_at_destination_seconds",
+      "shap_medio_min": 0.1185803442726796,
+      "importancia_pct": 1.1780784291532307
+    },
+    {
+      "variable": "weekday",
+      "shap_medio_min": 0.091375433279097,
+      "importancia_pct": 0.9078016054085274
+    },
+    {
+      "variable": "packages_at_destination",
+      "shap_medio_min": 0.02608532089047181,
+      "importancia_pct": 0.25915385932713275
+    }
+  ],
+  "peso_to_zone_id_pct": 5.3177797104367,
+  "mlflow_run_id": "55b0cfcf85c4439284fb0bad79dcff63"
+}
