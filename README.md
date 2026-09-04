@@ -57,10 +57,12 @@ descomprimido en `.jdk/` en la raíz del proyecto, que los scripts detectan solo
 
 6. Arrancar la interfaz (arranca el servidor MCP sola si no está corriendo):
 
-   uv run streamlit run src/app/app.py
+   uv run sdai-app
 ```
 
-El servidor MCP también se puede arrancar a mano para depurar: `uv run sdai-mcp`.
+Equivalente a `uv run streamlit run src/app/app.py` (así es como lo ve Streamlit por dentro; `sdai-app`
+es solo el entry point instalado por `uv`). El servidor MCP también se puede arrancar a mano para
+depurar: `uv run sdai-mcp`.
 
 ## Reglas del proyecto
 

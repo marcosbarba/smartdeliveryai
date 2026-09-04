@@ -62,6 +62,7 @@ sdai-pipeline = "preprocessing.pipeline.ejecutar_pipeline_completo:main"
 sdai-eda = "preprocessing.eda.eda_tiempos:main"
 sdai-train = "modelado.entrenamiento_final:main"
 sdai-mcp = "agente.servidor_mcp.mcp_server:main"
+sdai-app = "app.lanzador:main"
 
 # Indice explicito para torch: solo se resuelve contra el aqui, el resto de paquetes (incluido
 # certifi, que langchain-openai exige >=2024.6.2 y que el indice de PyTorch serviria en una
