@@ -47,15 +47,15 @@ def tabla_ruta(tramos: list[dict], prediccion: dict | None = None) -> pd.DataFra
     filas = []
     for i, t in enumerate(tramos):
         fila = {
-            "tramo": t["segment_position"],
-            "destino": t["to_stop_id"],
-            "distancia_km": round(t["segment_distance_km"], 2),
-            "paquetes": t.get("packages_at_destination"),
-            "estimado": ", ".join(t.get("campos_estimados") or []) or "—",
+            "Tramo": t["segment_position"],
+            "Destino": t["to_stop_id"],
+            "Distancia (km)": round(t["segment_distance_km"], 2),
+            "Paquetes": t.get("packages_at_destination"),
+            "Dato estimado": ", ".join(t.get("campos_estimados") or []) or "—",
         }
         if prediccion is not None:
-            fila["tiempo_min"] = round(prediccion["tiempos_por_tramo_segundos"][i] / 60, 1)
-            fila["llegada_acumulada_min"] = round(prediccion["llegada_acumulada_segundos"][i] / 60, 1)
+            fila["Tiempo (min)"] = round(prediccion["tiempos_por_tramo_segundos"][i] / 60, 1)
+            fila["Llegada acumulada (min)"] = round(prediccion["llegada_acumulada_segundos"][i] / 60, 1)
         filas.append(fila)
     return pd.DataFrame(filas)
 
@@ -74,12 +74,12 @@ def tabla_ruta_optimizada(tramos: list[dict], orden_propuesto: list[int], tiempo
         acumulado += tiempo
         filas.append(
             {
-                "nuevo_orden": nueva_posicion,
-                "destino": t["to_stop_id"],
-                "paquetes": t.get("packages_at_destination"),
-                "estimado": ", ".join(t.get("campos_estimados") or []) or "—",
-                "tiempo_min": round(tiempo / 60, 1),
-                "llegada_acumulada_min": round(acumulado / 60, 1),
+                "Orden propuesto": nueva_posicion,
+                "Destino": t["to_stop_id"],
+                "Paquetes": t.get("packages_at_destination"),
+                "Dato estimado": ", ".join(t.get("campos_estimados") or []) or "—",
+                "Tiempo (min)": round(tiempo / 60, 1),
+                "Llegada acumulada (min)": round(acumulado / 60, 1),
             }
         )
     return pd.DataFrame(filas)
