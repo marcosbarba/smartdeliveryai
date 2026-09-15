@@ -1,5 +1,5 @@
 {
-  "generado_utc": "2026-09-04T17:40:42+00:00",
+  "generado_utc": "2026-09-15T07:50:03+00:00",
   "n_arboles_reparto": 1865,
   "n_arboles_almacen": 532,
   "test": {
@@ -146,5 +146,5 @@
     }
   ],
   "peso_to_zone_id_pct": 5.3177797104367,
-  "mlflow_run_id": "55b0cfcf85c4439284fb0bad79dcff63"
+  "mlflow_run_id": "1a525666d6e94bc191a80ad8afe2d048"
 }

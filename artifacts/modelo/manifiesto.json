@@ -1,6 +1,6 @@
 {
   "descripcion": "Modelo hibrido: CatBoost en tramos de reparto, LightGBM en el tramo de almacen. Entrenado sobre el 80% de las rutas (train); el 20% restante (test) nunca participo en el ajuste y es tambien el banco de produccion simulada del agente.",
-  "generado_utc": "2026-09-04T17:39:45+00:00",
+  "generado_utc": "2026-09-15T07:49:26+00:00",
   "objetivo": "travel_time_seconds",
   "unidad_prediccion": "segundos (dividir por 60 para minutos)",
   "poblacion": "'is_depot_segment' = 1 selecciona el especialista de almacen, 0 el de reparto",

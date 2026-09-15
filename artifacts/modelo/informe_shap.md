@@ -1,6 +1,6 @@
 # Interpretabilidad del modelo final (TreeSHAP)
 
-Generado por `entrenamiento_final.py` el 2026-09-04.
+Generado por `entrenamiento_final.py` el 2026-09-15.
 
 Modelo entrenado sobre el 100% de `train` (80% de las rutas), evaluado UNA VEZ
 sobre `test` (20%, nunca visto antes), y explicado con TreeSHAP nativo de cada
