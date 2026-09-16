@@ -33,9 +33,9 @@ from agente.grafo import responder  # noqa: E402
 st.set_page_config(page_title="SmartDeliveryAI - Agente de reparto", layout="wide")
 
 PREGUNTAS_RAPIDAS = [
-    "¿A qué hora llego a la última parada?",
     "Optimiza el orden de esta ruta",
-    "¿Por qué tarda tanto el primer tramo?",
+    "¿Qué margen de error tiene la estimación?",
+    "¿Cuál es el tramo que más tarda, y por qué?",
 ]
 
 ETIQUETAS_AGENTE = {

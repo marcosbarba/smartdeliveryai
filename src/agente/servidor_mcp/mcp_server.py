@@ -45,6 +45,10 @@ def _predecir_tramos(tramos: list[dict]) -> dict:
         "llegada_acumulada_segundos": [round(t, 1) for t in acumulado.tolist()],
         "tiempo_total_segundos": round(float(tiempos.sum()), 1),
         "to_stop_id": df["to_stop_id"].tolist() if "to_stop_id" in df.columns else None,
+        # Constante para toda la ruta (una sola hora de salida por route_id). Se expone para
+        # que el agente pueda dar una hora de llegada aproximada; no tiene minutos, ver
+        # docs/agente/guia_mcp.md.
+        "departure_hour": int(df["departure_hour"].iloc[0]) if "departure_hour" in df.columns and len(df) else None,
     }
 
 
@@ -133,11 +137,14 @@ def estado_ruta_activa() -> dict:
 @mcp.tool()
 def predecir_ruta_activa() -> dict:
     """Predict the travel time of every segment of the active route and the cumulative
-    arrival time at each stop, in the route's current order. Predictions are a typical
-    historical duration, not an exact time for one specific day; the reparto model has a
-    known tendency to underpredict on average (see docs/modelado/instrucciones_de_servicio.md
-    for the current measured bias) — mention this if promising a schedule, and give a small
-    range rather than a single exact number."""
+    arrival time at each stop, in the route's current order. Also returns departure_hour
+    (0-23, no minutes) so you can give an approximate clock time if the user asks when
+    something arrives — combine it with the cumulative seconds, but always phrase it as
+    "around HH:00" or a small range, never an exact minute: the hour itself has no minute
+    precision. Predictions are a typical historical duration, not an exact time for one
+    specific day; the reparto model has a known tendency to underpredict on average (see
+    docs/modelado/instrucciones_de_servicio.md for the current measured bias) — mention this
+    if promising a schedule, and give a small range rather than a single exact number."""
     ruta = _requiere_ruta_activa()
     return _predecir_tramos(ruta["tramos"])
 
