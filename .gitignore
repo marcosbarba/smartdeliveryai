@@ -46,3 +46,6 @@ artifacts/modelado/mlflow/
 # manifiesto, csv de importancia) SI se versiona: es documentacion pequena y legible que
 # no deberia depender de reentrenar 75 min para poder consultarse.
 artifacts/modelo/reparto_catboost.cbm
+
+# DOCX de la memoriaç
+docs/memoria/*.docx
